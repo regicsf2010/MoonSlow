@@ -4,16 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/ag/Population.cpp \
-../src/ag/Solar.cpp 
+../src/ag/MoonSlow.cpp \
+../src/ag/Population.cpp 
 
 OBJS += \
-./src/ag/Population.o \
-./src/ag/Solar.o 
+./src/ag/MoonSlow.o \
+./src/ag/Population.o 
 
 CPP_DEPS += \
-./src/ag/Population.d \
-./src/ag/Solar.d 
+./src/ag/MoonSlow.d \
+./src/ag/Population.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

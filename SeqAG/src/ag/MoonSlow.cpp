@@ -1,18 +1,18 @@
 /*
- * Solar.cpp
+ * MoonSlow.cpp
  *
  *  Created on: Oct 7, 2016
  *      Author: reginaldo
  */
 
-#include "Solar.h"
+#include "MoonSlow.h"
 
-Solar::Solar() {
+MoonSlow::MoonSlow() {
 	// TODO Auto-generated constructor stub
 
 }
 
-Solar::~Solar() {
+MoonSlow::~MoonSlow() {
 	// TODO Auto-generated destructor stub
 }
 

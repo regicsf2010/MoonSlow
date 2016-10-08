@@ -8,6 +8,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/chromosomePool/subdir.mk
+-include src/auxiliaries/subdir.mk
 -include src/ag/subdir.mk
 -include src/abstract/subdir.mk
 -include src/subdir.mk

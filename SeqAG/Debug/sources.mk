@@ -25,5 +25,7 @@ C_DEPS :=
 SUBDIRS := \
 src/abstract \
 src/ag \
+src/auxiliaries \
+src/chromosomePool \
 src \
 

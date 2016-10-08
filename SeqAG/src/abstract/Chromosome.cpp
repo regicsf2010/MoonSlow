@@ -6,16 +6,17 @@
  */
 
 #include "Chromosome.h"
+#include "../auxiliaries/Rand.h"
 
-Chromosome::Chromosome(double genes[], double objectives[]) {
+Chromosome::Chromosome(double *genes) {
 	this->genes = genes;
-	this->objectives = objectives;
 	this->busy = false;
 	this->fitness = 0;
 }
 
 Chromosome::~Chromosome() {
-
+	if(genes)
+		delete [] genes;
 }
 
 void Chromosome::setFitness(double fitness) {
@@ -26,26 +27,37 @@ double Chromosome::getFitness() const {
 	return this->fitness;
 }
 
-void Chromosome::setGene(double value, int pos) {
+void Chromosome::setGene(const double &value, const int &pos) {
 	this->genes[pos] = value;
 }
 
-double Chromosome::getGene(int pos) const {
+double Chromosome::getGene(const int &pos) const {
 	return this->genes[pos];
 }
 
-void Chromosome::setObjective(double value, int pos) {
-	this->objectives[pos] = value;
+double *Chromosome::getGenes() const {
+	return this->genes;
 }
 
-double Chromosome::getObjective(int pos) const {
-	return this->objectives[pos];
-}
-
-void Chromosome::setBusy(bool busy) {
+void Chromosome::setBusy(const bool &busy) {
 	this->busy = busy;
 }
 
-bool Chromosome::isBusy() {
+bool Chromosome::isBusy() const {
 	return this->busy;
 }
+
+double *Chromosome::initializeGenesAtRandom(const int nGenes, const int infimum, const int maximum) {
+	double *genes = new double[nGenes];
+	double val = 0;
+	Rand *r = new Rand();
+	r->SetSeed();
+	for (int i = 0; i < nGenes; i++) {
+		val = r->Uniform();
+		genes[i] = (1 - val) * infimum + val * maximum;
+	}
+	delete r;
+	return genes;
+}
+
+

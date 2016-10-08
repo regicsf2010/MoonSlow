@@ -12,24 +12,25 @@ class Chromosome {
 private:
 	double fitness;
 	double *genes;
-	double *objectives;
 	bool busy;
 
 public:
-	Chromosome(double genes[], double objectives[]);
+	Chromosome(double *);
 	virtual ~Chromosome();
 
 	void setFitness(double);
 	double getFitness() const;
 
-	void setGene(double, int);
-	double getGene(int) const;
+	void setGene(const double &, const int &);
+	double getGene(const int &) const;
+	double *getGenes() const;
 
-	void setObjective(double, int);
-	double getObjective(int) const;
+	void setBusy(const bool &);
+	bool isBusy() const;
 
-	void setBusy(bool);
-	bool isBusy();
+	static double *initializeGenesAtRandom(const int, const int, const int);
+
+	virtual void evaluate() = 0;
 };
 
 #endif /* CHROMOSOME_H_ */

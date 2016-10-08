@@ -1,6 +1,8 @@
-src/main.o: ../src/main.cpp ../src/functions/MathFunctions.h \
- ../src/functions/../auxiliaries/Configuration.h
+src/main.o: ../src/main.cpp ../src/ag/Population.h \
+ ../src/ag/../abstract/Chromosome.h ../src/auxiliaries/Configuration.h
 
-../src/functions/MathFunctions.h:
+../src/ag/Population.h:
 
-../src/functions/../auxiliaries/Configuration.h:
+../src/ag/../abstract/Chromosome.h:
+
+../src/auxiliaries/Configuration.h:
