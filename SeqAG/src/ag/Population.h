@@ -12,20 +12,38 @@
 
 class Population {
 private:
-	Chromosome **chomos;
+	Chromosome **chromos;
+
+	int functionID;
 	double fitnessMean;
 	double fitnessStd;
-	int functionID;
+
+	// Muste be static because of the call
+	static Chromosome *chromosomeFactory(const int);
+	static Chromosome *chromosomeEmptyFactory(const int);
+	int nGenes;
 
 public:
 	Population(int functionID);
 	virtual ~Population();
 
-	static Chromosome *chromosomeFactory(const int);
-	static Population *createPopulation(const int);
+	static Population *createPopulation(const int, bool);
 
 	Chromosome *getChromosome(const int &) const;
 
+	void calculateFitnessMean();
+	void calculateFitnessStd();
+	double getFitnessMean();
+	double getFitnessStd();
+
+	void setChromosome(const int &, Chromosome *);
+	int getFittest();
+	int getFunctionID();
+	int getNGenes();
+
+	Chromosome **getChromosomes();
+
+	void print();
 };
 
 #endif /* AG_POPULATION_H_ */

@@ -1,18 +1,17 @@
 #include <iostream>
 using namespace std;
-#include "ag/Population.h"
 #include "auxiliaries/Configuration.h"
-
+#include "ag/MoonSlow.h"
+#include "ag/Population.h"
 
 int main(void) {
-	Population *p = Population::createPopulation(Ackley::ID);
-	cout << p->getChromosome(2)->getGene(0) << endl;
-	p->getChromosome(2)->evaluate();
-	cout << p->getChromosome(2)->getFitness() << endl;
+	MoonSlow ml(Ackley::ID);
+	Population *p = ml.run();
+	int idx = p->getFittest();
+
+	p->getChromosome(idx)->print(p->getFunctionID());
 
 	delete p;
-
-	cout << "FIM" << endl;
-
+	cout << "END" << endl;
 	return 0;
 }

@@ -21,7 +21,7 @@ public:
 	void setFitness(double);
 	double getFitness() const;
 
-	void setGene(const double &, const int &);
+	void setGene(const int &, const double &);
 	double getGene(const int &) const;
 	double *getGenes() const;
 
@@ -29,6 +29,9 @@ public:
 	bool isBusy() const;
 
 	static double *initializeGenesAtRandom(const int, const int, const int);
+	static int getNGenes(const int &);
+
+	void print(const int &);
 
 	virtual void evaluate() = 0;
 };
