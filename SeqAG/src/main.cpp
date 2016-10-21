@@ -9,6 +9,7 @@ int main(void) {
 	MoonSlow ml(Ackley::ID);
 
 	auto start = chrono::steady_clock::now();
+<<<<<<< HEAD
 	Population *p = ml.run();
 	auto finish = chrono::steady_clock::now();
 
@@ -16,8 +17,23 @@ int main(void) {
 	double elapsed = chrono::duration_cast<chrono::duration<double>>(finish - start).count();
 
 	cout << "Time: " << elapsed << " (s)" << endl;
+=======
+
+	Population *p = ml.run();
+
+	auto finish = chrono::steady_clock::now();
+	//double elapsed = chrono::duration_cast<chrono::milliseconds>(finish - start).count();
+	double elapsed = chrono::duration_cast<chrono::duration<double>>(finish - start).count();
+
+	cout << "Time: " << elapsed << " (s)" << endl;
+	//int idx = p->getFittest();
+
+	//p->getChromosome(idx)->print(p->getFunctionID());
+>>>>>>> 1dbf85291298e24860b79c3cef357b8aba73d79c
 
 	delete p;
 	cout << "--END MOONSLOW--" << endl;
 	return 0;
 }
+
+
