@@ -81,5 +81,5 @@ void Chromosome::print(const int &functionID) {
 		if(g != nGenes - 1)
 			cout << ", ";
 	}
-	cout << "} | f(x) = " << this->getFitness() << endl;
+	cout << " } | f(x) = " << this->getFitness() << endl;
 }

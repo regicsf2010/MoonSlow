@@ -25,8 +25,8 @@ MoonSlow::MoonSlow(const int functionID) {
 MoonSlow::~MoonSlow() {
 	if(p)
 		delete p;
-	if(selected)
-		delete selected;
+//	if(selected) /*Already deleted in survivor operator*/
+//		delete selected;
 }
 
 void MoonSlow::initializePopulation() {

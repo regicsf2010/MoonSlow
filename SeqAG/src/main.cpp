@@ -17,11 +17,11 @@ int main(void) {
 	double elapsed = chrono::duration_cast<chrono::duration<double>>(finish - start).count();
 
 	cout << "Time: " << elapsed << " (s)" << endl;
-	//int idx = p->getFittest();
 
-	//p->getChromosome(idx)->print(p->getFunctionID());
+	int idx = p->getFittest();
+	p->getChromosome(idx)->print(p->getFunctionID());
 
-	delete p;
+	//delete p;
 	cout << "--END MOONSLOW--" << endl;
 	return 0;
 }
